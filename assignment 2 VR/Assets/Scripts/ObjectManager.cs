@@ -15,6 +15,9 @@ public class ObjectManager : MonoBehaviour
     public Boolean keyPickup = false;
     public Boolean boxBroken = false;
 
+    // Audiosource to manage the pickup for the key
+    public AudioSource sound; 
+
 
     public void pickupMap()
     {
@@ -30,6 +33,7 @@ public class ObjectManager : MonoBehaviour
         {
             keyPickup = true;
             key.SetActive(false);
+            sound.Play();
         }
     }
 
@@ -45,7 +49,7 @@ public class ObjectManager : MonoBehaviour
         }
         else
         {
-            notification.text = "Maybe there is something else I can find to help me?";
+            notification.text = "A box? Maybe there is something here that can help me?";
         }
     }
 

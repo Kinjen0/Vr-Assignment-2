@@ -17,7 +17,7 @@ public class GazeOverEvent : MonoBehaviour
     /// </summary>
     /// <remarks>This should be larger for larger objects.</remarks>
     [Range(0, 360)]
-    public float maximumAngleForEvent = 30f; // The field of degrees extra from the object that are still counted as a gaze
+    public float maximumAngleForEvent = 15f; // The field of degrees extra from the object that are still counted as a gaze
 
     //UnityEvents Manual: https://docs.unity3d.com/Manual/UnityEvents.html
  
