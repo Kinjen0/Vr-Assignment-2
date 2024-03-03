@@ -43,7 +43,7 @@ public class GazeOverEvent : MonoBehaviour
         {
             Hovering();
 
-            if (XRInputManager.IsButtonDown() || Input.GetMouseButton(0))
+            if (XRInputManager.IsButtonDown())
             {
                 ButtonPressed();
             }
