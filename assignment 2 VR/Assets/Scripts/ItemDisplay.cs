@@ -8,7 +8,7 @@ public class ItemDisplay : MonoBehaviour
     public void DisplayMessage(string message)
     {
         messageText.text = message;
-        Debug.Log("");
+        
     }
 
     public void ClearMessage()

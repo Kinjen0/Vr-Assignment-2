@@ -18,12 +18,12 @@ public class IslandObjectManager : MonoBehaviour
     public void pickupPaddle()
     {
         paddlePickup = true;
-        Debug.Log("Paddle Picked up");
+        Debug.Log(paddlePickup);
     }
     public void pickupConsumables()
     {
         consumablesPickup = true;
-        Debug.Log("Consumables = true now");
+        Debug.Log(consumablesPickup);
     }
 
 
@@ -44,6 +44,7 @@ public class IslandObjectManager : MonoBehaviour
         }
         else
         {
+            Debug.Log(paddlePickup);
             text.text = "I still need something for my voyage";
         }
     }
