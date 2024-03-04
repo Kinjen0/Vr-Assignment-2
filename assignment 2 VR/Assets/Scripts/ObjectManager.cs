@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ObjectManager : MonoBehaviour
@@ -14,6 +15,8 @@ public class ObjectManager : MonoBehaviour
     public Boolean hammerPickup = false;
     public Boolean keyPickup = false;
     public Boolean boxBroken = false;
+
+    public GameObject key;
 
     // Audiosource to manage the pickup for the key
     public AudioSource sound; 
@@ -73,7 +76,13 @@ public class ObjectManager : MonoBehaviour
         {
             box.SetActive(false);
             boxBroken = true;
+            activateKey();
         }
+    }
+
+    public void activateKey()
+    {
+        key.SetActive(true);
     }
 
     public void checkKey()
@@ -82,5 +91,14 @@ public class ObjectManager : MonoBehaviour
         {
             notification.text = "ohhh key";
         }
+    }
+
+    public void openDoor(int nextScene)
+    {
+        if(mapPickup && hammerPickup && keyPickup)
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+
     }
 }
