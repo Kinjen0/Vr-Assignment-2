@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class IslandObjectManager : MonoBehaviour
@@ -41,6 +42,7 @@ public class IslandObjectManager : MonoBehaviour
         {
             text.text = "You have everything you need!";
             Boat.SetActive(false);
+            SceneManager.LoadScene(3);
         }
         else
         {

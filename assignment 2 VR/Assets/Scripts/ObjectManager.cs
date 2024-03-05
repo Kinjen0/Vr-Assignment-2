@@ -19,7 +19,8 @@ public class ObjectManager : MonoBehaviour
     public GameObject key;
 
     // Audiosource to manage the pickup for the key
-    public AudioSource sound; 
+    public AudioSource sound;
+    public AudioSource boxBreak;
 
 
     public void pickupMap()
@@ -77,6 +78,8 @@ public class ObjectManager : MonoBehaviour
             box.SetActive(false);
             boxBroken = true;
             activateKey();
+            boxBreak.Play();
+            notification.text = "A Key!";
         }
     }
 
