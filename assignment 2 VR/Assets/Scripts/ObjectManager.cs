@@ -22,6 +22,9 @@ public class ObjectManager : MonoBehaviour
     public AudioSource sound;
     public AudioSource boxBreak;
 
+    // Score
+    public Score2 scoreObject;
+
 
     public void pickupMap()
     {
@@ -38,6 +41,7 @@ public class ObjectManager : MonoBehaviour
             keyPickup = true;
             key.SetActive(false);
             sound.Play();
+            scoreObject.increaseScore(100);
         }
     }
 
@@ -80,6 +84,7 @@ public class ObjectManager : MonoBehaviour
             activateKey();
             boxBreak.Play();
             notification.text = "A Key!";
+            scoreObject.increaseScore(100);
         }
     }
 
