@@ -10,12 +10,12 @@ public class IslandObjectManager : MonoBehaviour
     
     // First we will get a text object to store the notification text. 
     public Text text;
-    // Next we will have three booleans to manage the pickups
+    //Two booleans for handling pickup of the paddle and consumables before the boat
     public Boolean paddlePickup = false;
     public Boolean consumablesPickup = false;
    
 
-
+    //
     public void pickupPaddle()
     {
         paddlePickup = true;
@@ -29,23 +29,18 @@ public class IslandObjectManager : MonoBehaviour
 
 
 
-    // Now we have to check the door
+    // Doesn't allow you to pickup boat until you have both the paddle and consumables
     public void pickupBoat(GameObject Boat)
     {
-        if (Boat == null)
-        {
-            Debug.LogError("Boat GameObject is null!");
-            return;
-        }
 
-        if (paddlePickup && consumablesPickup)
+        if (paddlePickup && consumablesPickup) //When you have all necessary items you can now pickup and load next scene
         {
             text.text = "You have everything you need!";
             Boat.SetActive(false);
             
             SceneManager.LoadScene(3);
         }
-        else
+        else  //Do not have both the paddle and consumables, so cannot leave yet
         {
             Debug.Log(paddlePickup);
             text.text = "I still need something for my voyage";

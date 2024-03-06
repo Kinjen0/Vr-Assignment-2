@@ -5,33 +5,34 @@ using UnityEngine.UI;
 
 public class ScoreRyan : MonoBehaviour
 {
+    //Create variables
     int score;
     public Text scoreText;
 
     private void Start()
     {
-        score = 0;
+        score = 0; //make score 0 at start and add text to display saying score
         updateScoreText();
     }
 
     
-    public void increaseScore (int scoreValue)
+    public void increaseScore (int scoreValue) 
     {
         score += scoreValue;
-        updateScoreText();
-        Debug.Log("increased score");
+        updateScoreText(); //call update score
+        //Debug.Log("increased score");
     }
 
     public void decreaseScore (int scoreValue)
     {
         score -= scoreValue;
         updateScoreText();
-        Debug.Log("Decreased Score");
+        //Debug.Log("Decreased Score");
     }
 
-    public void updateScoreText ()
+    public void updateScoreText () //update score on ui
     {
-        scoreText.text = "Score: " + score;
-        Debug.Log(score);
+        scoreText.text = "Score: " + score; //update score text element
+        //Debug.Log(score); //Shows points in debug log for error handling
     }
 }
