@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class IslandObjectManager : MonoBehaviour
 {
-    // The whole point of this class is going to be to manage the current state of the various objects, and to then make the nessessary changes
+    
     // First we will get a text object to store the notification text. 
     public Text text;
     // Next we will have three booleans to manage the pickups
@@ -42,6 +42,7 @@ public class IslandObjectManager : MonoBehaviour
         {
             text.text = "You have everything you need!";
             Boat.SetActive(false);
+            
             SceneManager.LoadScene(3);
         }
         else
